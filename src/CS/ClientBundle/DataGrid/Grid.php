@@ -58,7 +58,7 @@ class Grid extends BaseGrid
      */
     public function getActions(ActionCollection $actions)
     {
-        $add = new Action('Add Client');
+        $add = new Action('add_client');
 
         $add->setAction('_client_add')
             ->attributes(array('class' => 'btn btn-primary'));

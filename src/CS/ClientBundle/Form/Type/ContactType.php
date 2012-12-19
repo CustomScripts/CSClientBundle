@@ -21,7 +21,7 @@ class ContactType extends AbstractType
     {
         $builder->add('firstname');
         $builder->add('lastname');
-        $builder->add('details', 'collection', array('type' => new ContactDetailType, 'allow_add' => true, 'allow_delete' => true, 'by_reference' => false, 'label' => 'Contact Details'));
+        $builder->add('details', 'collection', array('type' => new ContactDetailType, 'allow_add' => true, 'allow_delete' => true, 'by_reference' => false, 'label' => 'contact_details'));
     }
 
     public function getName()
