@@ -19,16 +19,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 use CS\QuoteBundle\Entity\Quote;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * CS\ClientBundle\Entity\Client
  *
  * @ORM\Table(name="clients")
  * @ORM\Entity(repositoryClass="CS\ClientBundle\Repository\ClientRepository")
  * @UniqueEntity("name")
- * @Gedmo\Loggable()
- * @Gedmo\SoftDeleteable(fieldName="deleted")
  */
 class Client
 {
@@ -66,32 +62,6 @@ class Client
      * @Assert\Valid()
      */
     private $status;
-
-    /**
-     * @var string $created
-     *
-     * @ORM\Column(name="created", type="datetime")
-     * @Gedmo\Timestampable(on="create")
-     * @Assert\DateTime()
-     */
-    private $created;
-
-    /**
-     * @var string $updated
-     *
-     * @ORM\Column(name="updated", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     * @Assert\DateTime()
-     */
-    private $updated;
-
-    /**
-     * @var string $deleted
-     *
-     * @ORM\Column(name="deleted", type="datetime", nullable=true)
-     * @Assert\DateTime()
-     */
-    private $deleted;
 
     /**
      * @var ArrayCollection $contacts
