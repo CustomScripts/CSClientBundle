@@ -1,5 +1,5 @@
 {
-    "name": "customscripts/cs-client-bundle",
+    "name": "customscripts/client-bundle",
     "type": "library",
     "description": "Bundle to manage clients and contacts",
     "keywords": [
