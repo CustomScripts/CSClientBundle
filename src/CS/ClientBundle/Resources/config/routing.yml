@@ -1,0 +1,16 @@
+CSClientBundle:
+    resource: "@CSClientBundle/Controller/"
+    type:     annotation
+    prefix:   /clients
+    
+_clients_index:
+    pattern:   /clients
+    defaults:  { _controller: CSClientBundle:Default:index }
+    
+_clients_add:
+    pattern:   /clients/add
+    defaults:  { _controller: CSClientBundle:Default:add }
+    
+_clients_edit:
+    pattern:   /clients/edit/{id}
+    defaults:  { _controller: CSClientBundle:Default:edit }

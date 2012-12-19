@@ -22,19 +22,21 @@ use CS\ClientBundle\Form\Type\ClientType;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="_client_index")
-     * @Template()
+     * List all the clients
+     *
+     * @return Response
      */
     public function indexAction()
     {
         $grid = $this->get('grid')->create(new Grid);
 
-        return array('grid' => $grid);
+        return $this->render('CSClientBundle:Default:index.html.twig', array('grid' => $grid));
     }
 
     /**
-     * @Route("/add", name="_client_add")
-     * @Template()
+     * Adds a new client
+     *
+     * @return Response
      */
     public function addAction()
     {
@@ -53,19 +55,20 @@ class DefaultController extends Controller
                 $em->persist($client);
                 $em->flush();
 
-                $this->redirectFlash('_client_index', "Client Successfully Saved!", "success");
+                $this->redirectFlash('_client_index', "client_saved", "success");
             }
         }
 
-        return array('form' => $form->createView());
+        return $this->render('CSClientBundle:Default:add.html.twig', array('form' => $form->createView()));
     }
 
     /**
-     * @Route("/edit", name="_client_edit")
-     * @Template()
+     * Edit a client
+     *
+     * @return Response
      */
-    public function editAction()
+    public function editAction(Client $client)
     {
-        return array();
+        return $this->render('CSClientBundle:Default:edit.html.twig', array());
     }
 }
