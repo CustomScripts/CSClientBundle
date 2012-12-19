@@ -73,20 +73,11 @@ class Client
     private $contacts;
 
     /**
-     * @var ArrayCollection $quotes
-     *
-     * @ORM\OneToMany(targetEntity="CS\QuoteBundle\Entity\Quote", mappedBy="client", cascade={"ALL"})
-     * @Assert\Valid()
-     */
-    private $quotes;
-
-    /**
      * Constructer
      */
     public function __construct()
     {
         $this->contacts = new ArrayCollection;
-        $this->quotes = new ArrayCollection;
     }
 
     /**
@@ -169,75 +160,6 @@ class Client
     }
 
     /**
-     * Set created
-     *
-     * @param  \DateTime $created
-     * @return Client
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param  \DateTime $updated
-     * @return Client
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
-     * Set deleted
-     *
-     * @param  \DateTime $deleted
-     * @return Client
-     */
-    public function setDeleted(\DateTime $deleted)
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime
-     */
-    public function getDeleted()
-    {
-        return $this->created;
-    }
-
-    /**
      * Add contact
      *
      * @param  Contact $contact
@@ -272,43 +194,6 @@ class Client
     public function getContacts()
     {
         return $this->contacts;
-    }
-
-    /**
-     * Add quote
-     *
-     * @param  Quote $quote
-     * @return Client
-     */
-    public function addQuote(Quote $quote)
-    {
-    	$this->quotes[] = $quote;
-    	$quote->setClient($this);
-
-    	return $this;
-    }
-
-    /**
-     * Removes a quote
-     *
-     * @param  Quote $quote
-     * @return Client
-     */
-    public function removeQuote(Quote $quote)
-    {
-    	$this->quotes->removeElement($quote);
-
-    	return $this;
-    }
-
-    /**
-     * Get quotes
-     *
-     * @return ArrayCollection
-     */
-    public function getQuotes()
-    {
-    	return $this->quotes;
     }
 
     /**
