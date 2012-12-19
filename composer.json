@@ -1,0 +1,26 @@
+{
+    "name": "customscripts/cs-client-bundle",
+    "type": "library",
+    "description": "Bundle to manage clients and contacts",
+    "keywords": [
+        "clients",
+        "contacts"
+    ],
+    "homepage": "http://customscripts.co.za",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pierre du Plessis",
+            "email": "info@customscripts.co.za"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "customscripts/cs-core-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "CS": "src/"
+        }
+    }
+}

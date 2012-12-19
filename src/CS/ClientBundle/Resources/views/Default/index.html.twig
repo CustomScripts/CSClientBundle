@@ -1,0 +1,17 @@
+{#
+ #
+ # This file is part of the CSClientBundle package.
+ #
+ # (c) Pierre du Plessis <info@customscripts.co.za>
+ #
+ # For the full copyright and license information, please view the LICENSE
+ # file that was distributed with this source code.
+#}
+
+{% extends "CSCoreBundle:Layout:sidebar.html.twig" %}
+
+{% block title %}{{ 'clients'|trans }}{% endblock %}
+
+{% block content %}
+    {{ grid(grid) }}
+{% endblock %}
