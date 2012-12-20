@@ -16,15 +16,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * CS\ClientBundle\Entity\Contact
  *
  * @ORM\Table(name="contacts")
  * @ORM\Entity(repositoryClass="CS\ClientBundle\Repository\ContactRepository")
- * @Gedmo\Loggable()
- * @Gedmo\SoftDeleteable(fieldName="deleted")
  */
 class Contact
 {
@@ -53,32 +49,6 @@ class Contact
      * @Assert\MaxLength(125)
      */
     private $lastname;
-
-    /**
-     * @var string $created
-     *
-     * @ORM\Column(name="created", type="datetime")
-     * @Gedmo\Timestampable(on="create")
-     * @Assert\DateTime()
-     */
-    private $created;
-
-    /**
-     * @var string $updated
-     *
-     * @ORM\Column(name="updated", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     * @Assert\DateTime()
-     */
-    private $updated;
-
-    /**
-     * @var string $deleted
-     *
-     * @ORM\Column(name="deleted", type="datetime", nullable=true)
-     * @Assert\DateTime()
-     */
-    private $deleted;
 
     /**
      * @var Client $client
@@ -163,75 +133,6 @@ class Contact
     public function getLastname()
     {
         return $this->lastname;
-    }
-
-    /**
-     * Set created
-     *
-     * @param  \DateTime $created
-     * @return Contact
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return DateTime
-     */
-    public function getCreated()
-    {
-        return new DateTime($this->created);
-    }
-
-    /**
-     * Set updated
-     *
-     * @param  \DateTime $updated
-     * @return Contact
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return DateTime
-     */
-    public function getUpdated()
-    {
-        return new DateTime($this->updated);
-    }
-
-    /**
-     * Set deleted
-     *
-     * @param  \DateTime $deleted
-     * @return Contact
-     */
-    public function setDeleted(\DateTime $deleted)
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return DateTime
-     */
-    public function getDeleted()
-    {
-        return new DateTime($this->created);
     }
 
     /**

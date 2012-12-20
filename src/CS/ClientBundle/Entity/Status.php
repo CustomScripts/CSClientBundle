@@ -17,16 +17,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * CS\ClientBundle\Entity\Status
  *
  * @ORM\Table(name="client_status")
  * @ORM\Entity()
  * @UniqueEntity("name")
- * @Gedmo\Loggable()
- * @Gedmo\SoftDeleteable(fieldName="deleted")
  */
 class Status
 {
@@ -47,32 +43,6 @@ class Status
      * @Assert\MaxLength(125)
      */
     private $name;
-
-    /**
-     * @var string $created
-     *
-     * @ORM\Column(name="created", type="datetime")
-     * @Gedmo\Timestampable(on="create")
-     * @Assert\DateTime()
-     */
-    private $created;
-
-    /**
-     * @var string $updated
-     *
-     * @ORM\Column(name="updated", type="datetime")
-     * @Gedmo\Timestampable(on="update")
-     * @Assert\DateTime()
-     */
-    private $updated;
-
-    /**
-     * @var string $deleted
-     *
-     * @ORM\Column(name="deleted", type="datetime", nullable=true)
-     * @Assert\DateTime()
-     */
-    private $deleted;
 
     /**
      * @var ArrayCollection $clients
@@ -121,75 +91,6 @@ class Status
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set created
-     *
-     * @param  \DateTime $created
-     * @return Status
-     */
-    public function setCreated(\DateTime $created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param  \DateTime $updated
-     * @return Status
-     */
-    public function setUpdated(\DateTime $updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return \DateTime
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
-     * Set deleted
-     *
-     * @param  \DateTime $deleted
-     * @return Status
-     */
-    public function setDeleted(\DateTime $deleted)
-    {
-        $this->deleted = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Get created
-     *
-     * @return \DateTime
-     */
-    public function getDeleted()
-    {
-        return $this->created;
     }
 
     /**
