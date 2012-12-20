@@ -20,7 +20,7 @@
     },
     "suggest" : {
         "doctrine/doctrine-fixtures-bundle" : "Load fixtures for bundle"
-    }
+    },
     "autoload": {
         "psr-0": {
             "CS": "src/"
