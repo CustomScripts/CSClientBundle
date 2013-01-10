@@ -28,7 +28,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $grid = $this->get('grid')->create(new Grid);
+        $grid = $this->get('cs_data_grid.grid')->create(new Grid);
 
         return $this->render('CSClientBundle:Default:index.html.twig', array('grid' => $grid));
     }
