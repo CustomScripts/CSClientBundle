@@ -1,6 +1,6 @@
 {
     "name": "customscripts/client-bundle",
-    "type": "library",
+    "type": "symfony-bundle",
     "description": "Bundle to manage clients and contacts",
     "keywords": [
         "clients",
