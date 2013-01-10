@@ -16,7 +16,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "customscripts/core-bundle": "dev-master"
+        "customscripts/core-bundle": "dev-master",
+        "customscripts/datagrid-bundle" : "dev-master"
     },
     "suggest" : {
         "doctrine/doctrine-fixtures-bundle" : "Load fixtures for bundle"
