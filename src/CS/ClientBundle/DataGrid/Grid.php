@@ -11,12 +11,12 @@
 
 namespace CS\ClientBundle\DataGrid;
 
-use CS\DataGridBundle\Grid\BaseGrid;
+use CS\DataGridBundle\Grid\Base;
 use CS\DataGridBundle\Grid\Column\ColumnCollection;
 use CS\DataGridBundle\Grid\Action\ActionCollection;
 use CS\DataGridBundle\Grid\Action\Action;
 
-class Grid extends BaseGrid
+class Grid extends Base
 {
     /**
      * returns the entity name for the cliets
