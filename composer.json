@@ -22,6 +22,7 @@
     "suggest" : {
         "doctrine/doctrine-fixtures-bundle" : "Load fixtures for bundle"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "CS": "src/"
