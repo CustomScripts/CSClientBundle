@@ -47,15 +47,17 @@ class DefaultController extends Controller
         $request = $this->getRequest();
 
         if ($request->getMethod() === 'POST') {
-            $form->bindRequest($request);
+            $form->bind($request);
 
             if ($form->isValid()) {
-                $em = $this->getEm();
+                $em = $this->get('doctrine.orm.entity_manager');
 
                 $em->persist($client);
                 $em->flush();
 
-                $this->redirectFlash('_client_index', "client_saved", "success");
+                $this->flash($this->trans('client_saved'));
+
+                return $this->redirect($this->generateUrl('_clients_index'));
             }
         }
 
