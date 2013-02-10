@@ -14,3 +14,7 @@ _clients_add:
 _clients_edit:
     pattern:   /clients/edit/{id}
     defaults:  { _controller: CSClientBundle:Default:edit }
+    
+_clients_view:
+    pattern:   /clients/view/{id}
+    defaults:  { _controller: CSClientBundle:Default:view }

@@ -22,6 +22,10 @@
                 <source>client_saved</source>
                 <target>Client Successfully Saved!</target>
             </trans-unit>
+            <trans-unit id="06">
+                <source>view_client</source>
+                <target>View Client</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

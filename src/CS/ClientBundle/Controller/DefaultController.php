@@ -73,4 +73,14 @@ class DefaultController extends Controller
     {
         return $this->render('CSClientBundle:Default:edit.html.twig', array());
     }
+
+    /**
+     * View a client
+     *
+     * @return Response
+     */
+    public function viewAction(Client $client)
+    {
+    	return $this->render('CSClientBundle:Default:view.html.twig', array('client' => $client));
+    }
 }
