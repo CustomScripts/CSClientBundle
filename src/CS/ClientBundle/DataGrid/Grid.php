@@ -13,6 +13,7 @@ namespace CS\ClientBundle\DataGrid;
 
 use CS\DataGridBundle\Grid\Base;
 use CS\DataGridBundle\Grid\Column\ColumnCollection;
+use CS\DataGridBundle\Grid\Column\Column;
 use CS\DataGridBundle\Grid\Action\ActionCollection;
 use CS\DataGridBundle\Grid\Action\Action;
 
@@ -48,6 +49,14 @@ class Grid extends Base
         $collection->remove(array('deleted', 'updated'));
 
         $collection['id']->setLabel('#');
+
+        $container = $this->getContainer();
+
+        $collection->add('view', function($client) use ($container) {
+        	$router = $container->get('router');
+
+			return '<a href="'.$router->generate('_clients_view', array('id' => $client->getId())).'" class="btn"><i class="icon-eye-open"></i> View</a>';
+        });
     }
 
     /**
@@ -75,5 +84,19 @@ class Grid extends Base
 
         $actions->add($add);
         //$actions->add($edit);
+    }
+
+    /**
+     * Get attributes for datagrid
+     *
+     * @return array
+     */
+    public function getAttributes()
+    {
+    	return array(
+    					'table' => array(
+    										'class' => 'table table-bordered table-striped table-hover'
+    									)
+    			);
     }
 }
