@@ -1,0 +1,15 @@
+parameters:
+    cs_client.client_status.class: CS\ClientBundle\Model\Status
+    cs_client.twig.status.class: CS\ClientBundle\Twig\Extension\ClientStatus
+    
+services:
+    cs_client.client_status:
+        class: %cs_client.client_status.class%
+        public: false
+
+    cs_client.twig.status:
+        class: %cs_client.twig.status.class%
+        calls:
+            - [setStatusClass, [@cs_client.client_status]]
+        tags:
+            - { name: twig.extension }
