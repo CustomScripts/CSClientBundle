@@ -17,6 +17,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+use APY\DataGridBundle\Grid\Mapping as GRID;
+
 use CS\QuoteBundle\Entity\Quote;
 
 /**
@@ -60,6 +62,7 @@ class Client
      *
      * @ORM\ManyToOne(targetEntity="Status", inversedBy="clients", cascade={"ALL"})
      * @Assert\Valid()
+     * @GRID\Column(field="status.name")
      */
     private $status;
 
