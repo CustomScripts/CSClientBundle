@@ -22,9 +22,33 @@
                 <source>client_saved</source>
                 <target>Client Successfully Saved!</target>
             </trans-unit>
-            <trans-unit id="06">
+            <trans-unit id="6">
                 <source>view_client</source>
                 <target>View Client</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>website</source>
+                <target>Website</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>all_clients</source>
+                <target>All Clients</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>active_clients</source>
+                <target>Active Clients</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>inactive_clients</source>
+                <target>In-Active Clients</target>
             </trans-unit>
         </body>
     </file>
