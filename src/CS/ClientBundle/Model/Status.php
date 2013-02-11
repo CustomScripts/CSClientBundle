@@ -45,4 +45,14 @@ class Status {
 
 		return 'inverse';
 	}
+
+	/**
+	 * Return an array of all the available statuses
+	 *
+	 * @return array
+	 */
+	public function getStatusList()
+	{
+		return array_keys($this->statusLabels);
+	}
 }
