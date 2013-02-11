@@ -19,6 +19,8 @@ use CS\ClientBundle\DataGrid\Grid;
 use CS\ClientBundle\Entity\Client;
 use CS\ClientBundle\Form\Type\ClientType;
 
+use APY\DataGridBundle\Grid\Source\Entity;
+
 class DefaultController extends Controller
 {
     /**
@@ -28,9 +30,17 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $grid = $this->get('cs_data_grid.grid')->create(new Grid);
+    	$source = new Entity('CSClientBundle:Client');
 
-        return $this->render('CSClientBundle:Default:index.html.twig', array('grid' => $grid));
+    	// Get a Grid instance
+    	$grid = $this->get('grid');
+
+    	// Attach the source to the grid
+    	$grid->setSource($source);
+
+    	// Return the response of the grid to the template
+    	return $grid->getGridResponse('CSClientBundle:Default:index.html.twig');
+
     }
 
     /**
