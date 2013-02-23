@@ -65,7 +65,7 @@ class DefaultController extends Controller
                 $em->persist($client);
                 $em->flush();
 
-                $this->flash($this->trans('client_saved'));
+                $this->flash($this->trans('client_saved'), 'success');
 
                 return $this->redirect($this->generateUrl('_clients_index'));
             }
