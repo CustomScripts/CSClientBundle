@@ -81,7 +81,9 @@ class DefaultController extends Controller
      */
     public function editAction(Client $client)
     {
-        return $this->render('CSClientBundle:Default:edit.html.twig', array());
+    	$form = $this->createForm(new ClientType, $client);
+
+        return $this->render('CSClientBundle:Default:add.html.twig', array('form' => $form->createView()));
     }
 
     /**
